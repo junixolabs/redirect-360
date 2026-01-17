@@ -1,0 +1,33 @@
+# OS / Editor junk
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Node / build tools (if used)
+node_modules/
+npm-debug.log*
+yarn-error.log*
+dist/
+build/
+
+# Composer (if used)
+vendor/
+composer.lock
+
+# WordPress-specific
+wp-config.php
+wp-content/uploads/
+wp-content/cache/
+
+# Plugin-specific
+*.zip
+*.tar.gz
+
+# Env files
+.env
+.env.*
