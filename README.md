@@ -82,4 +82,4 @@ When a visitor or search engine hits a missing page, the plugin automatically re
 
 ## License
 
-- GPL v2 or later
+This plugin is licensed under the GPL v2 or later.
