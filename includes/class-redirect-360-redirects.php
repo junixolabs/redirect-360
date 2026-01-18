@@ -18,15 +18,15 @@ class Redirect_360_Redirects {
         global $wpdb;
         $table = $wpdb->prefix . 'redirect_360_redirects';
 
-        // Normalize from_url to relative path.
+        // Normalize from_url to relative path without trailing slash.
         $home = home_url();
         $from_url = str_replace( $home, '', $data['from_url'] );
-        if ( ! str_starts_with( $from_url, '/' ) ) {
+        $from_url = preg_replace( '/\s+/', '', $from_url );  // Remove spaces
+        if ( strpos( $from_url, '/' ) !== 0 ) {
             $from_url = '/' . $from_url;
         }
-        $from_url = sanitize_text_field( $from_url );
+        $from_url = rtrim( sanitize_text_field( $from_url ), '/' );
 
-        // to_url can be absolute or relative.
         $to_url = sanitize_text_field( $data['to_url'] );
 
         $wpdb->insert(
@@ -35,7 +35,7 @@ class Redirect_360_Redirects {
                 'from_url'      => $from_url,
                 'to_url'        => $to_url,
                 'redirect_type' => intval( $data['redirect_type'] ),
-                'enabled'       => isset( $data['enabled'] ) ? 1 : 0,
+                'enabled'       => 1,
             )
         );
 
@@ -46,15 +46,15 @@ class Redirect_360_Redirects {
         global $wpdb;
         $table = $wpdb->prefix . 'redirect_360_redirects';
 
-        // Normalize from_url to relative path.
+        // Normalize from_url.
         $home = home_url();
         $from_url = str_replace( $home, '', $data['from_url'] );
-        if ( ! str_starts_with( $from_url, '/' ) ) {
+        $from_url = preg_replace( '/\s+/', '', $from_url );  // Remove spaces
+        if ( strpos( $from_url, '/' ) !== 0 ) {
             $from_url = '/' . $from_url;
         }
-        $from_url = sanitize_text_field( $from_url );
+        $from_url = rtrim( sanitize_text_field( $from_url ), '/' );
 
-        // to_url can be absolute or relative.
         $to_url = sanitize_text_field( $data['to_url'] );
 
         $wpdb->update(
@@ -63,7 +63,6 @@ class Redirect_360_Redirects {
                 'from_url'      => $from_url,
                 'to_url'        => $to_url,
                 'redirect_type' => intval( $data['redirect_type'] ),
-                'enabled'       => isset( $data['enabled'] ) ? 1 : 0,
             ),
             array( 'id' => $id )
         );
@@ -73,5 +72,11 @@ class Redirect_360_Redirects {
         global $wpdb;
         $table = $wpdb->prefix . 'redirect_360_redirects';
         $wpdb->delete( $table, array( 'id' => $id ) );
+    }
+
+    public static function get_hits_count( $id ) {
+        global $wpdb;
+        $table = $wpdb->prefix . 'redirect_360_logs';
+        return $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM $table WHERE redirect_id = %d", $id ) ) ?? 0;
     }
 }

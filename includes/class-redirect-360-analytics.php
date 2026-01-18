@@ -13,11 +13,17 @@ class Redirect_360_Analytics {
                 'redirect_id' => $redirect_id,
                 'hit_time'    => current_time( 'mysql' ),
                 'ip'          => $_SERVER['REMOTE_ADDR'],
-                'referrer'    => wp_get_referer(),
+                'referrer'    => wp_get_referer() ? wp_get_referer() : '',
             )
         );
 
-        // Purge old logs based on settings.
+        // Purge old logs.
+        self::purge_old_logs();
+    }
+
+    private static function purge_old_logs() {
+        global $wpdb;
+        $table = $wpdb->prefix . 'redirect_360_logs';
         $settings = get_option( 'redirect_360_settings', array() );
         $days = ! empty( $settings['log_retention_days'] ) ? intval( $settings['log_retention_days'] ) : 30;
         if ( $days > 0 ) {
@@ -25,33 +31,18 @@ class Redirect_360_Analytics {
         }
     }
 
-    public static function get_logs( $redirect_id = null ) {
+    public static function get_hits_over_time( $redirect_id = null ) {
         global $wpdb;
         $table = $wpdb->prefix . 'redirect_360_logs';
-
         $where = $redirect_id ? $wpdb->prepare( "WHERE redirect_id = %d", $redirect_id ) : '';
-
-        return $wpdb->get_results( "SELECT * FROM $table $where ORDER BY hit_time DESC", ARRAY_A );
+        return $wpdb->get_results( "SELECT DATE(hit_time) as date, COUNT(*) as hits FROM $table $where GROUP BY date ORDER BY date ASC", ARRAY_A );
     }
 
-    public static function get_hits_over_time() {
+    public static function get_referrer_stats( $redirect_id = null ) {
         global $wpdb;
         $table = $wpdb->prefix . 'redirect_360_logs';
-        return $wpdb->get_results( "SELECT DATE(hit_time) as date, COUNT(*) as hits FROM $table GROUP BY date ORDER BY date ASC", ARRAY_A );
-    }
-
-    public static function get_top_redirects() {
-        global $wpdb;
-        $table_logs = $wpdb->prefix . 'redirect_360_logs';
-        $table_redirects = $wpdb->prefix . 'redirect_360_redirects';
-        return $wpdb->get_results( "SELECT r.from_url, COUNT(l.id) as hits FROM $table_logs l JOIN $table_redirects r ON l.redirect_id = r.id GROUP BY l.redirect_id ORDER BY hits DESC LIMIT 10", ARRAY_A );
-    }
-
-    public static function get_redirect_types_stats() {
-        global $wpdb;
-        $table_logs = $wpdb->prefix . 'redirect_360_logs';
-        $table_redirects = $wpdb->prefix . 'redirect_360_redirects';
-        return $wpdb->get_results( "SELECT r.redirect_type, COUNT(l.id) as hits FROM $table_logs l JOIN $table_redirects r ON l.redirect_id = r.id GROUP BY r.redirect_type", ARRAY_A );
+        $where = $redirect_id ? $wpdb->prepare( "WHERE redirect_id = %d", $redirect_id ) : '';
+        return $wpdb->get_results( "SELECT referrer, COUNT(*) as count FROM $table $where GROUP BY referrer", ARRAY_A );
     }
 
     public static function clear_logs() {

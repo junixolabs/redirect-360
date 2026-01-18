@@ -1,9 +1,7 @@
 jQuery(document).ready(function ($) {
   if (typeof redirect360Data !== "undefined") {
     // Hits Over Time Line Chart
-    const hitsCtx = document
-      .getElementById("hitsOverTimeChart")
-      ?.getContext("2d");
+    const hitsCtx = $("#hitsOverTimeChart")[0]?.getContext("2d");
     if (hitsCtx) {
       new Chart(hitsCtx, {
         type: "line",
@@ -13,71 +11,39 @@ jQuery(document).ready(function ($) {
             {
               label: "Hits",
               data: redirect360Data.hitsOverTime.map((item) => item.hits),
-              borderColor: "rgba(59, 130, 246, 1)",
-              backgroundColor: "rgba(59, 130, 246, 0.2)",
+              borderColor: "#2563eb",
+              backgroundColor: "rgba(37, 99, 235, 0.2)",
               fill: true,
             },
           ],
         },
-        options: {
-          responsive: true,
-          scales: {
-            y: { beginAtZero: true },
-          },
-        },
+        options: { responsive: true, scales: { y: { beginAtZero: true } } },
       });
     }
 
-    // Top Redirects Bar Chart
-    const topCtx = document
-      .getElementById("topRedirectsChart")
-      ?.getContext("2d");
-    if (topCtx) {
-      new Chart(topCtx, {
-        type: "bar",
-        data: {
-          labels: redirect360Data.topRedirects.map((item) => item.from_url),
-          datasets: [
-            {
-              label: "Hits",
-              data: redirect360Data.topRedirects.map((item) => item.hits),
-              backgroundColor: "rgba(34, 197, 94, 0.7)",
-            },
-          ],
-        },
-        options: {
-          responsive: true,
-          scales: {
-            y: { beginAtZero: true },
-          },
-        },
-      });
-    }
-
-    // Redirect Types Pie Chart
-    const typesCtx = document
-      .getElementById("typesStatsChart")
-      ?.getContext("2d");
-    if (typesCtx) {
-      new Chart(typesCtx, {
+    // Referrers Pie Chart
+    const referrerCtx = $("#referrerStatsChart")[0]?.getContext("2d");
+    if (referrerCtx) {
+      new Chart(referrerCtx, {
         type: "pie",
         data: {
-          labels: redirect360Data.typesStats.map((item) => item.redirect_type),
+          labels: redirect360Data.referrerStats.map(
+            (item) => item.referrer || "Direct",
+          ),
           datasets: [
             {
-              data: redirect360Data.typesStats.map((item) => item.hits),
+              data: redirect360Data.referrerStats.map((item) => item.count),
               backgroundColor: [
-                "rgba(239, 68, 68, 0.7)",
-                "rgba(245, 158, 11, 0.7)",
-                "rgba(16, 185, 129, 0.7)",
-                "rgba(59, 130, 246, 0.7)",
+                "#2563eb",
+                "#60a5fa",
+                "#93c5fd",
+                "#bfdbfe",
+                "#dbeafe",
               ],
             },
           ],
         },
-        options: {
-          responsive: true,
-        },
+        options: { responsive: true },
       });
     }
   }

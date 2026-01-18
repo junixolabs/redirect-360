@@ -1,4 +1,20 @@
-/* Custom overrides or supplements for Tailwind if needed. */
-.wrap {
-    /* Ensure full width for modern look. */
+.redirect-360-wrap .bg-white {
+    background-color: white;
+}
+
+.redirect-360-wrap .bg-gray-200 {
+    background-color: #e5e7eb;
+}
+
+.redirect-360-wrap .text-blue-500 {
+    color: #2563eb;
+}
+
+.redirect-360-wrap .bg-[#2563eb] {
+    background-color: #2563eb;
+}
+
+/* Prevent global bleed */
+body .redirect-360-wrap {
+    margin: 20px;
 }

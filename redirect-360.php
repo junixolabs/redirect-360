@@ -4,17 +4,20 @@
  * Plugin URI:  https://redirect-360.vercel.app/
  * Description: Redirect 360 is a lightweight WordPress redirection plugin that silently recovers lost traffic and protects SEO from broken, expired, and mistyped URLs.
  * Version:     1.0.0
- * Author:      Shubhadip Bhowmik
- * Author URI:  https://shubhadipbhowmik.vercel.app/
- * License:     GPL v2 or later
- * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Requires at least: 6.0
+ * Requires PHP: 7.4
+ * Tested up to: 6.7
+ * Author: Shubhadip Bhowmik
+ * Author URI: https://shubhadipbhowmik.vercel.app/
+ * License: GPL v2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: redirect-360
  */
 
 defined( 'ABSPATH' ) || exit;
 
 // Define constants.
-define( 'REDIRECT_360_VERSION', '1.0.0' );
+define( 'REDIRECT_360_VERSION', '1.0.3' );
 define( 'REDIRECT_360_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'REDIRECT_360_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 

@@ -6,6 +6,7 @@ global $wpdb;
 // Drop custom tables.
 $wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}redirect_360_redirects" );
 $wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}redirect_360_logs" );
+$wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}redirect_360_404_logs" );
 
 // Delete options.
 delete_option( 'redirect_360_settings' );
