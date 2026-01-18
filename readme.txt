@@ -1,55 +1,75 @@
 === Redirect 360 ===
 Contributors: shubhadipbhowmik
-Tags: redirect, seo, 404, broken links, traffic recovery
+Tags: redirect manager, 301 redirect, 404 redirect, broken links, seo redirect, traffic recovery
 Requires at least: 6.0
-Tested up to: 6.4
+Tested up to: 6.7
 Requires PHP: 7.4
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Redirect 360 is a lightweight WordPress redirection plugin that silently recovers lost traffic and protects SEO from broken, expired, and mistyped URLs.
+Redirect 360 is a lightweight WordPress redirect manager that fixes 404 errors, manages 301/302 redirects, and helps recover lost SEO traffic without slowing down your site.
 
 == Description ==
 
-Redirect 360 helps you manage URL redirects easily, recover traffic from 404 errors, and protect SEO rankings without slowing down your site.
+**Redirect 360** is a fast, privacy-friendly WordPress redirection plugin designed to help site owners fix broken links, manage URL redirects, and protect search engine rankings.
 
-Features include:
+Whether you are migrating a website, fixing 404 errors, or cleaning up outdated URLs, Redirect 360 gives you full control over redirects with minimal performance impact.
 
-* Automatic 404 detection
-* Bulk redirect manager
-* Regex and wildcard redirects
-* Support for 301, 302, 307, and 410 redirects
-* Redirect hit tracking
-* GDPR-safe and privacy-friendly logic
-* Works with all themes and cache plugins
+### Why use Redirect 360?
+
+* Fix 404 errors and broken links automatically
+* Create SEO-friendly 301, 302, 307, and 410 redirects
+* Recover lost traffic from mistyped or expired URLs
+* Improve crawl efficiency for search engines
+* Lightweight logic with no unnecessary bloat
+* Works seamlessly with caching and SEO plugins
+* GDPR-safe with no personal data tracking
+
+Redirect 360 is ideal for developers, bloggers, and businesses who want a reliable redirect manager without complex configurations.
 
 == Installation ==
 
-1. Upload the plugin files to the `/wp-content/plugins/redirect-360` directory.
-2. Activate the plugin through the 'Plugins' screen in WordPress.
-3. Open Redirect 360 from the admin menu and configure redirects.
+You can install Redirect 360 in two ways.
+
+= From the WordPress Plugin Directory =
+
+1. Go to **Plugins → Add New** in your WordPress admin dashboard
+2. Search for **Redirect 360**
+3. Click **Install Now**
+4. Activate the plugin
+
+= Manual Installation =
+
+1. Download the plugin ZIP file
+2. Go to **Plugins → Add New → Upload Plugin**
+3. Upload the ZIP file and click **Install Now**
+4. Activate **Redirect 360** from the Plugins screen
+
+After activation, open Redirect 360 from the WordPress admin menu to manage your redirects.
 
 == Frequently Asked Questions ==
 
-= Does this plugin slow down my site? =
-No. Redirect 360 uses optimized, server-friendly logic.
+= Does Redirect 360 affect site performance? =
+No. The plugin is optimized for speed and runs only when a redirect is needed.
 
-= Is it safe for SEO? =
-Yes. It preserves link equity and improves crawl efficiency.
+= Is Redirect 360 safe for SEO? =
+Yes. Proper redirect status codes help preserve link equity and improve indexing.
 
-= Does it track personal data? =
-No. Redirect 360 is GDPR-safe and does not collect personal data.
+= Can I manage bulk redirects? =
+Yes. Redirect 360 includes bulk redirect management for faster setup.
+
+= Does the plugin collect user data? =
+No. Redirect 360 does not collect or store personal data and is GDPR-friendly.
 
 == Screenshots ==
 
-1. Redirect list page.
-2. Add new redirect form.
-3. Analytics dashboard.
-4. Bulk redirect import.
-5. Settings page.
+1. Redirect URL Lists
+2. Bulk Export and Import
+3. Redirect Analytics
+4. Support Page
 
 == Changelog ==
 
 = 1.0.0 =
-* Initial release.
+* Initial release of Redirect 360

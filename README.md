@@ -1,75 +1,100 @@
-# Redirect 360 - Smart WordPress Redirection Plugin
+# Redirect 360 – Smart WordPress Redirection Plugin
 
-Redirect 360 is a lightweight WordPress redirection plugin built to silently recover lost traffic, protect SEO rankings, and fix broken or expired URLs automatically.
+Redirect 360 is a lightweight WordPress redirect manager designed to fix 404 errors, recover lost traffic, and protect SEO rankings with minimal performance impact.
 
-It works in the background using clean, server-friendly redirection logic with zero performance impact and no data leakage.
+It runs silently in the background using clean, server-friendly logic and does not collect or store personal data.
 
 ---
 
 ## Why Redirect 360
 
-- protects search rankings from 404 errors
-- recovers lost visitors automatically
-- preserves link equity and page authority
-- improves crawl efficiency
-- keeps user experience clean and fast
+- Prevents SEO loss caused by 404 and broken links
+- Recovers visitors from expired or mistyped URLs
+- Preserves link equity and page authority
+- Improves crawl efficiency for search engines
+- Keeps redirection fast, clean, and reliable
 
 ---
 
 ## Key Features
 
-- automatic 404 detection and redirection
-- bulk redirect manager
-- regex and wildcard redirect rules
-- supports 301, 302, 307 and 410 redirects
-- real time redirect hit tracking
-- referrer and device based analytics
-- country based redirection
-- zero impact on site speed
-- works with all cache plugins and themes
-- gdpr safe and privacy friendly
+- Automatic 404 detection and handling
+- Bulk redirect management
+- Regex and wildcard redirect rules
+- Supports 301, 302, 307, and 410 status codes
+- Redirect hit tracking and analytics
+- Referrer and device-based insights
+- Country-based redirection rules
+- Zero impact on site performance
+- Compatible with all themes and caching plugins
+- GDPR-safe and privacy-friendly
 
 ---
 
 ## How It Works
 
-Redirect 360 monitors incoming traffic and identifies broken or expired URLs.
-When a visitor or search engine hits a missing page, the plugin automatically redirects them to the most relevant live content.
+Redirect 360 monitors incoming requests and detects broken or missing URLs.  
+When a visitor or search engine hits a non-existent page, the plugin applies the most relevant redirect rule to guide traffic to live content while preserving SEO value.
 
 ---
 
-## Use Cases
+## Common Use Cases
 
-- seo recovery after site redesign
-- domain or permalink structure changes
-- expired product or blog url handling
-- broken backlink traffic recovery
-- marketing campaign url protection
+- SEO recovery after website redesign or migration
+- Domain or permalink structure changes
+- Handling expired products or removed pages
+- Recovering traffic from broken backlinks
+- Protecting marketing and campaign URLs
 
 ---
 
 ## Installation
 
-- upload redirect-360 to the wordpress plugins directory
-- activate the plugin from the plugins page
-- open Redirect 360 from the admin menu
-- add redirect rules or enable auto detection
+Redirect 360 can be installed in two ways.
+
+### From the WordPress Plugin Directory
+
+1. Go to **Plugins → Add New** in your WordPress admin dashboard
+2. Search for **Redirect 360**
+3. Click **Install Now**
+4. Activate the plugin
+
+### Manual Installation
+
+1. Download the plugin ZIP file
+2. Go to **Plugins → Add New → Upload Plugin**
+3. Upload the ZIP file and click **Install Now**
+4. Activate **Redirect 360** from the Plugins screen
+
+After activation, open Redirect 360 from the WordPress admin menu to manage your redirects.
 
 ---
 
 ## Frequently Asked Questions
 
-- does this plugin slow down my site
+### Does Redirect 360 slow down my site?
 
-- no, Redirect 360 uses optimized server friendly logic
+No. The plugin is optimized for performance and runs only when a redirect is required.
 
-- is it safe for seo
+### Is Redirect 360 safe for SEO?
 
-- yes, it preserves link equity and crawl efficiency
+Yes. Proper redirect status codes help preserve link equity and improve crawl efficiency.
 
-- does it track personal data
+### Does the plugin track personal or visitor data?
 
-- no, it is gdpr safe and does not leak personal data
+No. Redirect 360 does not collect personal data and is fully GDPR-compliant.
+
+### Can I manage redirects in bulk?
+
+Yes. Bulk redirect management is supported for faster setup and maintenance.
+
+### Does it work with caching and SEO plugins?
+
+Yes. Redirect 360 is compatible with all major caching and SEO plugins.
+
+### When should I use 301 vs 302 redirects?
+
+Use **301** for permanent URL changes and **302** for temporary redirects. Redirect 360 supports both.
 
 ---
 
@@ -82,4 +107,4 @@ When a visitor or search engine hits a missing page, the plugin automatically re
 
 ## License
 
-This plugin is licensed under the GPL v2 or later.
+Redirect 360 is licensed under the **GNU General Public License v2.0 or later**.
