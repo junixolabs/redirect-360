@@ -46,7 +46,7 @@ wp_localize_script( 'redirect-360-admin-js', 'redirect360Data', array(
 
 <div class="flex flex-wrap -mx-4">
     <div class="w-3/4 px-4">
-        <form method="post" class="bg-white p-4 mb-4 rounded shadow">
+        <form method="post" class="bg-white p-4 mb-4">
             <?php wp_nonce_field( 'save_redirect' ); ?>
             <div class="flex space-x-4">
                 <div class="w-1/4">
@@ -95,14 +95,24 @@ wp_localize_script( 'redirect-360-admin-js', 'redirect360Data', array(
                     <td class="p-2"><?php echo $r['redirect_type'] . ' - ' . esc_html( $r['from_url'] ); ?></td>
                     <td class="p-2"><?php echo esc_html( $r['to_url'] ); ?></td>
                     <td class="p-2"><?php echo Redirect_360_Redirects::get_hits_count( $r['id'] ); ?></td>
-                    <td class="p-2">
+                    <td class="p-2 whitespace-nowrap">
                         <a href="<?php echo admin_url( 'admin.php?page=redirect-360&tab=rules&edit=' . $r['id'] ); ?>"
-                            class="text-blue-500">Edit</a>
-                        <a href="<?php echo wp_nonce_url( admin_url( 'admin.php?page=redirect-360&tab=rules&delete=' . $r['id'] ), 'delete_redirect' ); ?>"
-                            class="text-red-500" onclick="return confirm('Sure?');">Delete</a>
+                            class="text-blue-600 mr-2">
+                            Edit
+                        </a>
+
+                        <a href="<?php echo wp_nonce_url(
+        admin_url( 'admin.php?page=redirect-360&tab=rules&delete=' . $r['id'] ),
+        'delete_redirect'
+    ); ?>" class="text-red-600 mr-2" onclick="return confirm('Sure?');">
+                            Delete
+                        </a>
+
                         <a href="<?php echo admin_url( 'admin.php?page=redirect-360&tab=rules&analytics_id=' . $r['id'] ); ?>"
-                            class="dashicons dashicons-chart-line text-gray-500"></a>
+                            class="dashicons dashicons-chart-bar text-slate-500 align-middle">
+                        </a>
                     </td>
+
                 </tr>
                 <?php endforeach; ?>
                 <?php endif; ?>

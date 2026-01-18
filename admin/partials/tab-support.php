@@ -7,14 +7,86 @@ if ( ! current_user_can( 'manage_options' ) ) {
 ?>
 
 <div class="flex flex-wrap -mx-4">
+
     <div class="w-3/4 px-4">
-        <div class="bg-white p-4 rounded shadow">
-            <h2 class="text-lg font-bold">Support</h2>
-            <p>Contact: shubhadip@junixo.com</p>
-            <p>Support the project: <a href="https://buymeacoffee.com/shubhadipbhowmik" class="text-blue-500">Buy Me a
-                    Coffee</a></p>
+        <div class="bg-white p-6 shadow">
+
+            <!-- Header -->
+            <h2 class="text-xl font-semibold text-slate-800 mb-1">
+                Support & Maintainer
+            </h2>
+            <p class="text-sm text-slate-500 mb-6">
+                Redirect 360 is actively maintained and community-driven.
+            </p>
+
+            <!-- Grid -->
+            <div class="grid grid-cols-2 gap-6">
+
+                <!-- Contact -->
+                <div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="dashicons dashicons-email-alt"></span>
+                        <h3 class="text-sm font-medium text-slate-700">Contact</h3>
+                    </div>
+
+                    <a href="mailto:shubhadipbhowmikdev@gmail.com" class="text-sm text-blue-600 hover:underline">
+                        shubhadipbhowmikdev@gmail.com
+                    </a>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="dashicons dashicons-admin-links"></span>
+                        <h3 class="text-sm font-medium text-slate-700">Links</h3>
+                    </div>
+
+                    <ul class="space-y-1 text-sm">
+                        <li>
+                            <a href="https://shubhadipbhowmik.vercel.app/" target="_blank"
+                                class="text-blue-600 hover:underline">
+                                Personal Website
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/subhadipbhowmik" target="_blank"
+                                class="text-blue-600 hover:underline">
+                                GitHub Profile
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/shubhadip-bhowmik/" target="_blank"
+                                class="text-blue-600 hover:underline">
+                                LinkedIn Profile
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://x.com/myselfshubhadip" target="_blank"
+                                class="text-blue-600 hover:underline">
+                                X (Twitter)
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Support -->
+            <div class="mt-6 border-t pt-4 flex items-center justify-between">
+                <div class="flex items-center gap-2 text-sm text-slate-600">
+                    <span class="dashicons dashicons-heart"></span>
+                    Support ongoing development
+                </div>
+
+                <a href="https://buymeacoffee.com/shubhadipbhowmik" target="_blank" style="color: #ffffff !important"
+                    class="bg-[#2563eb] px-4 py-2 text-sm cursor-pointer font-medium text-white shadow">
+                    Buy Me a Coffee
+                </a>
+            </div>
+
         </div>
     </div>
+
 
     <!-- support section  -->
     <!-- support section  -->

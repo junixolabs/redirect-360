@@ -19,17 +19,24 @@ class Redirect_360 {
     private function init_hooks() {
         add_action( 'admin_menu', array( $this, 'admin_menu' ) );
         add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_assets' ) );
-        add_action( 'admin_head', array( $this, 'redirect_360_add_tailwind_play_cdn' ) );
+        add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_tailwind' ) );
         add_action( 'template_redirect', array( $this, 'handle_redirects' ) );
         add_action( 'wp', array( $this, 'handle_404_logs' ) );  // Additional hook for reliable 404 detection
         add_action( 'admin_post_export_redirects', array( 'Redirect_360_Importer', 'export_csv' ) );
     }
 
-    public function redirect_360_add_tailwind_play_cdn() {
-        if ( strpos( get_current_screen()->id ?? '', 'redirect-360' ) !== false ) {
-            echo '<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>';
-        }
+
+    public function enqueue_tailwind() {
+    $screen = get_current_screen();
+    if ( $screen && strpos( $screen->id ?? '', 'redirect-360' ) !== false ) {
+        wp_enqueue_style(
+            'redirect-360-tailwind',
+            REDIRECT_360_PLUGIN_URL . 'assets/css/tailwind.min.css',
+            array(),
+            REDIRECT_360_VERSION
+        );
     }
+}
 
     public function admin_menu() {
         add_menu_page(
@@ -38,8 +45,8 @@ class Redirect_360 {
             'manage_options',
             'redirect-360',
             array( $this, 'admin_page' ),
-            'dashicons-image-rotate',
-            80
+            'dashicons-randomize',
+            65
         );
     }
 
@@ -65,6 +72,7 @@ class Redirect_360 {
     <h1 class="wp-heading-inline">Redirect 360</h1>
     <nav class="nav-tab-wrapper wp-clearfix">
         <a href="<?php echo admin_url( 'admin.php?page=redirect-360&tab=rules' ); ?>"
+            style="margin-left: 0px !important;"
             class="nav-tab <?php echo $tab === 'rules' ? 'nav-tab-active' : ''; ?>">Redirect Rules</a>
         <a href="<?php echo admin_url( 'admin.php?page=redirect-360&tab=error_log' ); ?>"
             class="nav-tab <?php echo $tab === 'error_log' ? 'nav-tab-active' : ''; ?>">404 Error Log</a>

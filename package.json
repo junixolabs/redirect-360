@@ -1,0 +1,28 @@
+{
+  "name": "redirect-360",
+  "version": "1.0.0",
+  "description": "Redirect 360 is a lightweight WordPress redirection plugin built to silently recover lost traffic, protect SEO rankings, and fix broken or expired URLs automatically.",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./assets/css/tailwind.min.css --minify",
+    "watch": "npx @tailwindcss/cli -i ./src/input.css -o ./assets/css/tailwind.min.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/junixolabs/redirect-360.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/junixolabs/redirect-360/issues"
+  },
+  "homepage": "https://github.com/junixolabs/redirect-360#readme",
+  "devDependencies": {
+    "tailwindcss": "^4.1.18"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.18"
+  }
+}

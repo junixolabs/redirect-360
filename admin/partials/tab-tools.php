@@ -74,7 +74,7 @@ if ( isset( $_POST['import_submit'] ) && check_admin_referer( 'import_csv' ) && 
 
                 <!-- Submit -->
                 <button type="submit" name="import_submit"
-                    class="bg-[#2563eb] px-5 py-2.5 text-sm font-semibold text-white shadow hover:bg-blue-700 transition">
+                    class="bg-[#2563eb] px-5 py-2.5 text-sm cursor-pointer font-semibold text-white shadow hover:bg-blue-700 transition">
                     Upload CSV
                 </button>
             </form>
@@ -100,11 +100,11 @@ if ( isset( $_POST['import_submit'] ) && check_admin_referer( 'import_csv' ) && 
             <?php endif; ?>
         </div>
 
-        <div class="bg-white p-4 rounded shadow">
+        <div class="bg-white p-4 shadow">
             <h2 class="text-lg font-bold">Export Redirect Rules</h2>
             <form method="post" action="<?php echo admin_url( 'admin-post.php?action=export_redirects' ); ?>">
                 <?php wp_nonce_field( 'export_redirects' ); ?>
-                <button type="submit" class="bg-[#2563eb] text-white p-2 rounded">Export Redirects</button>
+                <button type="submit" class="bg-[#2563eb] cursor-pointer text-white p-2">Export Redirects</button>
             </form>
         </div>
     </div>

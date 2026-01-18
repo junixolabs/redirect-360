@@ -43,7 +43,7 @@ if ( isset( $_POST['clear_404_logs'] ) && check_admin_referer( 'clear_404_logs' 
         </table>
         <form method="post" class="mt-4">
             <?php wp_nonce_field( 'clear_404_logs' ); ?>
-            <button type="submit" name="clear_404_logs" class="bg-red-500 text-white p-2 rounded"
+            <button type="submit" name="clear_404_logs" class="bg-red-500 text-white p-2"
                 onclick="return confirm('Clear all 404 logs?');">Clear Logs</button>
         </form>
     </div>
