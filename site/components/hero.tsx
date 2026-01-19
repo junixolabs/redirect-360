@@ -1,15 +1,16 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { ArrowUpRight, BookOpen } from "lucide-react"
-import { useEffect, useState } from "react"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ArrowUpRight, BookOpen } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export function Hero() {
-  const [mounted, setMounted] = useState(false)
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   return (
     <section className="pt-32 pb-20 px-6">
@@ -34,18 +35,28 @@ export function Hero() {
         <p
           className={`text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 text-pretty transition-all duration-700 delay-200 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
         >
-          A lightweight WordPress plugin that silently fixes broken, expired, and mistyped URLs. Protect your SEO and
-          never lose a visitor again.
+          A lightweight WordPress plugin that silently fixes broken, expired,
+          and mistyped URLs. Protect your SEO and never lose a visitor again.
         </p>
 
         <div
           className={`flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-700 delay-300 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
         >
-          <Button size="lg" className="gap-2 px-8">
-            Get Redirect 360
-            <ArrowUpRight className="w-4 h-4" />
-          </Button>
-          <Button size="lg" variant="outline" className="gap-2 px-8 bg-transparent">
+          <Link
+            href="https://wordpress.org/plugins/redirect-360/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button size="lg" className="gap-2 px-8 cursor-pointer">
+              Get Redirect 360
+              <ArrowUpRight className="w-4 h-4" />
+            </Button>
+          </Link>
+          <Button
+            size="lg"
+            variant="outline"
+            className="gap-2 px-8 bg-transparent cursor-pointer"
+          >
             <BookOpen className="w-4 h-4" />
             View Documentation
           </Button>
@@ -80,10 +91,16 @@ export function Hero() {
                     </svg>
                   </div>
                   <div className="flex-1">
-                    <div className="text-sm font-medium text-foreground">404 Detected & Redirected</div>
-                    <div className="text-xs text-muted-foreground">/old-page → /new-page</div>
+                    <div className="text-sm font-medium text-foreground">
+                      404 Detected & Redirected
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      /old-page → /new-page
+                    </div>
                   </div>
-                  <div className="px-3 py-1 bg-green-500/10 text-green-600 text-xs rounded-full">301 OK</div>
+                  <div className="px-3 py-1 bg-green-500/10 text-green-600 text-xs rounded-full">
+                    200 OK
+                  </div>
                 </div>
                 <div className="flex items-center gap-4 p-4 bg-muted/50 rounded-lg">
                   <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
@@ -98,10 +115,16 @@ export function Hero() {
                     </svg>
                   </div>
                   <div className="flex-1">
-                    <div className="text-sm font-medium text-foreground">Typo Corrected</div>
-                    <div className="text-xs text-muted-foreground">/produts → /products</div>
+                    <div className="text-sm font-medium text-foreground">
+                      Typo Corrected
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      /produts → /products
+                    </div>
                   </div>
-                  <div className="px-3 py-1 bg-green-500/10 text-green-600 text-xs rounded-full">301 OK</div>
+                  <div className="px-3 py-1 bg-green-500/10 text-green-600 text-xs rounded-full">
+                    200 OK
+                  </div>
                 </div>
               </div>
             </div>
@@ -109,5 +132,5 @@ export function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }
