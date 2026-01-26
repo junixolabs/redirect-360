@@ -1,16 +1,16 @@
 jQuery(document).ready(function ($) {
-  if (typeof redirect360Data !== "undefined") {
+  if (typeof r360Data !== "undefined") {
     // Hits Over Time Line Chart
     const hitsCtx = $("#hitsOverTimeChart")[0]?.getContext("2d");
     if (hitsCtx) {
       new Chart(hitsCtx, {
         type: "line",
         data: {
-          labels: redirect360Data.hitsOverTime.map((item) => item.date),
+          labels: r360Data.hitsOverTime.map((item) => item.date),
           datasets: [
             {
               label: "Hits",
-              data: redirect360Data.hitsOverTime.map((item) => item.hits),
+              data: r360Data.hitsOverTime.map((item) => item.hits),
               borderColor: "#2563eb",
               backgroundColor: "rgba(37, 99, 235, 0.2)",
               fill: true,
@@ -27,12 +27,12 @@ jQuery(document).ready(function ($) {
       new Chart(referrerCtx, {
         type: "pie",
         data: {
-          labels: redirect360Data.referrerStats.map(
+          labels: r360Data.referrerStats.map(
             (item) => item.referrer || "Direct",
           ),
           datasets: [
             {
-              data: redirect360Data.referrerStats.map((item) => item.count),
+              data: r360Data.referrerStats.map((item) => item.count),
               backgroundColor: [
                 "#2563eb",
                 "#60a5fa",
@@ -47,4 +47,11 @@ jQuery(document).ready(function ($) {
       });
     }
   }
+
+  // Custom file input display for Import tab (Tools)
+  // Updates the visible file name when user selects a file
+  $("#csvFile").on("change", function () {
+    const fileName = $(this).val().split("\\").pop() || "No file selected";
+    $("#fileName").text(fileName);
+  });
 });

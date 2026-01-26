@@ -2,21 +2,20 @@
 defined( 'ABSPATH' ) || exit;
 
 if ( ! current_user_can( 'manage_options' ) ) {
-    wp_die( 'Access denied.' );
+    wp_die( esc_html__( 'Access denied.', 'redirect-360' ) );
 }
 ?>
 
 <div class="flex flex-wrap -mx-4">
-
     <div class="w-3/4 px-4">
-        <div class="bg-white p-6 shadow">
+        <div class="bg-white p-6 shadow rounded">
 
             <!-- Header -->
             <h2 class="text-xl font-semibold text-slate-800 mb-1">
-                Support & Maintainer
+                <?php esc_html_e( 'Support & Maintainer', 'redirect-360' ); ?>
             </h2>
             <p class="text-sm text-slate-500 mb-6">
-                Redirect 360 is actively maintained and community-driven.
+                <?php esc_html_e( 'Redirect 360 is actively maintained and community-driven.', 'redirect-360' ); ?>
             </p>
 
             <!-- Grid -->
@@ -26,10 +25,12 @@ if ( ! current_user_can( 'manage_options' ) ) {
                 <div>
                     <div class="flex items-center gap-2 mb-2">
                         <span class="dashicons dashicons-email-alt"></span>
-                        <h3 class="text-sm font-medium text-slate-700">Contact</h3>
+                        <h3 class="text-sm font-medium text-slate-700"><?php esc_html_e( 'Contact', 'redirect-360' ); ?>
+                        </h3>
                     </div>
 
-                    <a href="mailto:shubhadipbhowmikdev@gmail.com" class="text-sm text-blue-600 hover:underline">
+                    <a href="<?php echo esc_url( 'mailto:shubhadipbhowmikdev@gmail.com' ); ?>"
+                        class="text-sm text-blue-600 hover:underline">
                         shubhadipbhowmikdev@gmail.com
                     </a>
                 </div>
@@ -38,32 +39,33 @@ if ( ! current_user_can( 'manage_options' ) ) {
                 <div>
                     <div class="flex items-center gap-2 mb-2">
                         <span class="dashicons dashicons-admin-links"></span>
-                        <h3 class="text-sm font-medium text-slate-700">Links</h3>
+                        <h3 class="text-sm font-medium text-slate-700"><?php esc_html_e( 'Links', 'redirect-360' ); ?>
+                        </h3>
                     </div>
 
                     <ul class="space-y-1 text-sm">
                         <li>
-                            <a href="https://shubhadipbhowmik.vercel.app/" target="_blank"
-                                class="text-blue-600 hover:underline">
-                                Personal Website
+                            <a href="<?php echo esc_url( 'https://shubhadipbhowmik.vercel.app/' ); ?>" target="_blank"
+                                rel="noopener" class="text-blue-600 hover:underline">
+                                <?php esc_html_e( 'Personal Website', 'redirect-360' ); ?>
                             </a>
                         </li>
                         <li>
-                            <a href="https://github.com/subhadipbhowmik" target="_blank"
-                                class="text-blue-600 hover:underline">
-                                GitHub Profile
+                            <a href="<?php echo esc_url( 'https://github.com/subhadipbhowmik' ); ?>" target="_blank"
+                                rel="noopener" class="text-blue-600 hover:underline">
+                                <?php esc_html_e( 'GitHub Profile', 'redirect-360' ); ?>
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.linkedin.com/in/shubhadip-bhowmik/" target="_blank"
-                                class="text-blue-600 hover:underline">
-                                LinkedIn Profile
+                            <a href="<?php echo esc_url( 'https://www.linkedin.com/in/shubhadip-bhowmik/' ); ?>"
+                                target="_blank" rel="noopener" class="text-blue-600 hover:underline">
+                                <?php esc_html_e( 'LinkedIn Profile', 'redirect-360' ); ?>
                             </a>
                         </li>
                         <li>
-                            <a href="https://x.com/myselfshubhadip" target="_blank"
-                                class="text-blue-600 hover:underline">
-                                X (Twitter)
+                            <a href="<?php echo esc_url( 'https://x.com/myselfshubhadip' ); ?>" target="_blank"
+                                rel="noopener" class="text-blue-600 hover:underline">
+                                <?php esc_html_e( 'X (Twitter)', 'redirect-360' ); ?>
                             </a>
                         </li>
                     </ul>
@@ -75,31 +77,29 @@ if ( ! current_user_can( 'manage_options' ) ) {
             <div class="mt-6 border-t pt-4 flex items-center justify-between">
                 <div class="flex items-center gap-2 text-sm text-slate-600">
                     <span class="dashicons dashicons-heart"></span>
-                    Support ongoing development
+                    <?php esc_html_e( 'Support ongoing development', 'redirect-360' ); ?>
                 </div>
 
-                <a href="https://buymeacoffee.com/shubhadipbhowmik" target="_blank" style="color: #ffffff !important"
-                    class="bg-[#2563eb] px-4 py-2 text-sm cursor-pointer font-medium text-white shadow">
-                    Buy Me a Coffee
+                <a href="<?php echo esc_url( 'https://buymeacoffee.com/shubhadipbhowmik' ); ?>" target="_blank"
+                    rel="noopener" class="bg-[#2563eb] px-4 py-2 text-sm cursor-pointer font-medium text-white shadow"
+                    style="color: #ffffff !important">
+                    <?php esc_html_e( 'Buy Me a Coffee', 'redirect-360' ); ?>
                 </a>
             </div>
 
         </div>
     </div>
 
-
-    <!-- support section  -->
-    <!-- support section  -->
+    <!-- Support sidebar -->
     <div class="w-1/4 px-4">
-        <div class="border-2 border-blue-600 bg-white p-6 shadow-sm">
-
+        <div class="border-2 border-blue-600 bg-white p-6 shadow-sm rounded">
             <!-- Header -->
             <div class="text-center">
                 <h2 class="text-2xl font-bold text-blue-700">
-                    Redirect 360
+                    <?php esc_html_e( 'Redirect 360', 'redirect-360' ); ?>
                 </h2>
                 <p class="mt-2 text-sm text-slate-600">
-                    Free & Open-Source WordPress Redirection Plugin
+                    <?php esc_html_e( 'Free & Open-Source WordPress Redirection Plugin', 'redirect-360' ); ?>
                 </p>
             </div>
 
@@ -108,30 +108,26 @@ if ( ! current_user_can( 'manage_options' ) ) {
 
             <!-- Features -->
             <ul class="space-y-2 text-sm text-slate-700">
-                <li>• Internal & External URL Redirects</li>
-                <li>• Chart-based Redirect Analytics</li>
-                <li>• Bulk Import & Export (CSV)</li>
-                <li>• Easy Redirect Management Dashboard</li>
-                <li>• Actively Maintained Open-Source Project</li>
-                <li>• Community-Driven Development</li>
-
+                <li>• <?php esc_html_e( 'Internal & External URL Redirects', 'redirect-360' ); ?></li>
+                <li>• <?php esc_html_e( 'Chart-based Redirect Analytics', 'redirect-360' ); ?></li>
+                <li>• <?php esc_html_e( 'Bulk Import & Export (CSV)', 'redirect-360' ); ?></li>
+                <li>• <?php esc_html_e( 'Easy Redirect Management Dashboard', 'redirect-360' ); ?></li>
+                <li>• <?php esc_html_e( 'Actively Maintained Open-Source Project', 'redirect-360' ); ?></li>
+                <li>• <?php esc_html_e( 'Community-Driven Development', 'redirect-360' ); ?></li>
             </ul>
 
             <!-- CTA -->
             <div class="mt-6 text-center">
-                <a href="https://buymeacoffee.com/shubhadipbhowmik" target="_blank"
-                    class="inline-block w-full bg-blue-600 px-4 py-3 text-sm font-semibold text-white"
+                <a href="<?php echo esc_url( 'https://buymeacoffee.com/shubhadipbhowmik' ); ?>" target="_blank"
+                    rel="noopener" class="inline-block w-full bg-blue-600 px-4 py-3 text-sm font-semibold text-white"
                     style="color: #ffffff !important">
-                    ☕ Support Development
+                    ☕ <?php esc_html_e( 'Support Development', 'redirect-360' ); ?>
                 </a>
 
                 <p class="mt-2 text-xs text-slate-500">
-                    Optional support. No paywalls. Ever.
+                    <?php esc_html_e( 'Optional support. No paywalls. Ever.', 'redirect-360' ); ?>
                 </p>
             </div>
-
         </div>
     </div>
-
-
 </div>
